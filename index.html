@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bingo Caller</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <main>
+    <h1>Bingo Caller</h1>
+    <button class="reset-btn" onclick="resetEverything()">Reset Everything</button>
+    <section class="bingo-board">
+      <h2>Caller</h2>
+      <div class="caller-controls">
+        <button onclick="drawNumber()">Draw Next Number</button>
+        <button onclick="resetCaller()">Reset Caller</button>
+      </div>
+      <div class="call-container">
+        <div id="current-call">-</div>
+        <div id="current-saying" class="saying"></div>
+      </div>
+      <div class="calls-history">
+        <strong>Called Numbers:</strong>
+        <div id="called-list"></div>
+      </div>
+      <button class="show-cards-btn" onclick="openCardsPage()">Show Cards</button>
+    </section>
+    <section class="bingo-score-table-wrapper">
+      <h2>Bingo Card Scores</h2>
+      <table class="bingo-score-table" id="bingo-score-table">
+        <thead>
+          <tr>
+            <th>Card Name</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <form class="add-card-form" onsubmit="addCard(event)">
+        <input type="text" id="card-name" placeholder="Card Name" required autocomplete="off">
+        <button class="generate-card" type="submit">Add Card</button>
+      </form>
+    </section>
+  </main>
+  <script src="js/index.js"></script>
+</body>
+</html>
